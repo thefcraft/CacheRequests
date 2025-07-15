@@ -23,7 +23,7 @@ class CloudScraper(BaseCloudScraper):
                  refresh_after: timedelta | None = None,
                  *args, **kwargs) -> None:
         self.__force_refresh: bool = force_refresh
-        self.__cache_dir: None | Path = Path(cache_dir) if cache_dir is not None else cache_dir
+        self.__cache_dir: None | Path = Path(cache_dir).ensure_exists() if cache_dir is not None else None
         self.__dump_to_cache: bool = dump_to_cache
         self.__refresh_after: timedelta | None = refresh_after
         self.__refresh_on_error: bool = refresh_on_error
@@ -101,7 +101,7 @@ class CloudScraper(BaseCloudScraper):
         prev_dump_to_cache = self.__dump_to_cache
         prev_overwrite_allow_redirects = self.__overwrite_allow_redirects
         try:
-            if not isinstance(cache_dir, _Null): self.__cache_dir = Path(cache_dir) if cache_dir is not None else cache_dir
+            if not isinstance(cache_dir, _Null): self.__cache_dir = Path(cache_dir).ensure_exists() if cache_dir is not None else None
             if not isinstance(force_refresh, _Null): self.__force_refresh = force_refresh
             if not isinstance(refresh_after, _Null): self.__refresh_after = refresh_after
             if not isinstance(refresh_on_error, _Null): self.__refresh_on_error = refresh_on_error

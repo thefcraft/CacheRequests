@@ -95,7 +95,7 @@ Contributions are welcome! If you have a feature request, bug report, or pull re
 CacheRequests is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details."""
 setup(
     name="PersistentRequests",
-    version="0.1.1",
+    version="0.1.2",
     author="ThefCraft",
     author_email="sisodiyalaksh@gmail.com",
     url="https://github.com/thefcraft/CacheRequests",
