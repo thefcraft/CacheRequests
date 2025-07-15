@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
-with open("README.md", "r", encoding="utf-8") as fh:
+import os
+basedir = os.path.dirname(os.path.abspath(__file__))
+with open(os.path.join(basedir, "README.md"), "r", encoding="utf-8") as fh:
     long_description = fh.read()
 setup(
     name="PersistentRequests",
