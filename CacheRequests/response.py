@@ -3,17 +3,16 @@ from requests import Response, HTTPError
 import pickle
 from typing import BinaryIO, overload, Iterator
 from datetime import timedelta, datetime, timezone
-from typing_extensions import Self
 from .path import Path
 
 class CacheResponse(Response):
-    def __init__(self: Self, *, timestamp: datetime):
+    def __init__(self, *, timestamp: datetime):
         self._stream_dump_path: Path | None = None
         self._timestamp: datetime = timestamp
         Response.__init__(self)
         
     @classmethod
-    def from_current_timestamp(cls) -> Self:
+    def from_current_timestamp(cls) -> "CacheResponse":
         return cls(
             timestamp=datetime.now(tz=timezone.utc)
         )

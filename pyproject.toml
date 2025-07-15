@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PersistentRequests"
+version = "1.0"
+authors = [
+  { name="ThefCraft", email="sisodiyalaksh@gmail.com" },
+]
+description = "A Python library that provides a simple and effective caching layer for web requests."
+readme = "  .md"
+requires-python = ">=3.8"
+license = { file="LICENSE" }
+keywords = ["cache", "requests", "caching", "session", "web", "scraper"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Core dependencies
+dependencies = [
+    "requests>=2.20.0",
+    "typing_extensions",
+]
+
+
+[tool.setuptools]
+packages = ["CacheRequests"]
+
+
+[project.urls]
+Homepage = "https://github.com/thefcraft/CacheRequests"
+"Bug Tracker" = "https://github.com/thefcraft/CacheRequests/issues"
+
+# Define the optional dependencies (extras) here
+[project.optional-dependencies]
+cloudscraper = ["cloudscraper>=1.2.71"]
