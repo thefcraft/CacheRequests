@@ -95,7 +95,7 @@ Contributions are welcome! If you have a feature request, bug report, or pull re
 CacheRequests is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details."""
 setup(
     name="PersistentRequests",
-    version="0.1.2",
+    version="0.1.3",
     author="ThefCraft",
     author_email="sisodiyalaksh@gmail.com",
     url="https://github.com/thefcraft/CacheRequests",
@@ -103,6 +103,10 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
+    include_package_data=True,
+    package_data={
+        "CacheRequests": ["*.pyi", "py.typed"]
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
