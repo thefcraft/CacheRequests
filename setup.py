@@ -10,6 +10,13 @@ CacheRequests is a Python library that provides a simple and effective caching l
 *   **Customizable:** Configure cache directories, refresh policies, and more.
 *   **Easy to Use:** A simple, intuitive API that gets out of your way.
 
+## Installation
+
+Install CacheFlow using pip:
+
+```bash
+pip install PersistentRequests
+```
 
 ## Quick Start
 
@@ -88,7 +95,7 @@ Contributions are welcome! If you have a feature request, bug report, or pull re
 CacheRequests is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details."""
 setup(
     name="PersistentRequests",
-    version="0.1.0",
+    version="0.1.1",
     author="ThefCraft",
     author_email="sisodiyalaksh@gmail.com",
     url="https://github.com/thefcraft/CacheRequests",

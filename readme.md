@@ -9,6 +9,13 @@ CacheRequests is a Python library that provides a simple and effective caching l
 *   **Customizable:** Configure cache directories, refresh policies, and more.
 *   **Easy to Use:** A simple, intuitive API that gets out of your way.
 
+## Installation
+
+Install CacheFlow using pip:
+
+```bash
+pip install PersistentRequests
+```
 
 ## Quick Start
 
