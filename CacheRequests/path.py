@@ -27,9 +27,9 @@ class Path(str):
     def from_basedir(cls, file_path: str = __file__) -> "Path":
         """Return a Path instance based on the directory of the given file."""
         return cls(os.path.dirname(os.path.abspath(file_path)))
-    def __str__(self) -> str:
+    def __repr__(self) -> str:
         """Override string representation for debugging."""
-        return f"Path({super().__str__()})"
+        return f"Path({super().__repr__()})"
     def join_path(self, *paths: str) -> "Path":
         return Path(os.path.join(self, *paths))
     def abs_path(self) -> "Path":

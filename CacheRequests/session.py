@@ -15,14 +15,14 @@ _DEFAULT = _Null()
 
 class CacheSession(Session):
     def __init__(self, 
-                 cache_dir: Path | None = None, 
+                 cache_dir: Path | str | None = None, 
                  force_refresh: bool = False, 
                  refresh_on_error: bool = False, 
                  dump_to_cache: bool = True,
                  overwrite_allow_redirects: bool | None = False,
                  refresh_after: timedelta | None = None) -> None:
         self.__force_refresh: bool = force_refresh
-        self.__cache_dir: None | Path = cache_dir
+        self.__cache_dir: None | Path = Path(cache_dir) if cache_dir is not None else cache_dir
         self.__dump_to_cache: bool = dump_to_cache
         self.__refresh_after: timedelta | None = refresh_after
         self.__refresh_on_error: bool = refresh_on_error
@@ -86,7 +86,7 @@ class CacheSession(Session):
     
     @contextmanager
     def configure(self, 
-        cache_dir: Path | None | _Null = _DEFAULT,
+        cache_dir: Path | str | None | _Null = _DEFAULT,
         force_refresh: bool | _Null = _DEFAULT,
         refresh_after: timedelta | None | _Null = _DEFAULT,
         refresh_on_error: bool | _Null = _DEFAULT,
@@ -100,7 +100,7 @@ class CacheSession(Session):
         prev_dump_to_cache = self.__dump_to_cache
         prev_overwrite_allow_redirects = self.__overwrite_allow_redirects
         try:
-            if not isinstance(cache_dir, _Null): self.__cache_dir = cache_dir
+            if not isinstance(cache_dir, _Null): self.__cache_dir = Path(cache_dir) if cache_dir is not None else cache_dir
             if not isinstance(force_refresh, _Null): self.__force_refresh = force_refresh
             if not isinstance(refresh_after, _Null): self.__refresh_after = refresh_after
             if not isinstance(refresh_on_error, _Null): self.__refresh_on_error = refresh_on_error

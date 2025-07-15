@@ -174,7 +174,7 @@ class CacheSession(Session):
     ) -> CacheResponse: ...
     
     def __init__(self, 
-                 cache_dir: Path | None = None, 
+                 cache_dir: Path | str | None = None, 
                  force_refresh: bool = False, 
                  refresh_on_error: bool = False, 
                  dump_to_cache: bool = True,
@@ -200,7 +200,7 @@ class CacheSession(Session):
     
     @contextmanager
     def configure(self, 
-        cache_dir: Path | None | _Null = _DEFAULT,
+        cache_dir: Path | str | None | _Null = _DEFAULT,
         force_refresh: bool | _Null = _DEFAULT,
         refresh_after: timedelta | None | _Null = _DEFAULT,
         refresh_on_error: bool | _Null = _DEFAULT,
