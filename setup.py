@@ -1,6 +1,9 @@
 from setuptools import setup, find_packages
 long_description = """# CacheRequests
 
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/thefcraft/CacheRequests)
+[![PyPI version](https://badge.fury.io/py/PersistentRequests.svg)](https://badge.fury.io/py/PersistentRequests)
+
 CacheRequests is a Python library that provides a simple and effective caching layer for your web requests. It's built on top of the popular `requests` library and is designed to be a drop-in replacement for `requests.Session`.
 
 ## Features
