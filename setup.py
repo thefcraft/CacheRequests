@@ -3,7 +3,7 @@ with open('readme.md', 'r') as f:
     long_description = f.read()
 setup(
     name="cached_requests",
-    version="0.1.3",
+    version="0.1.4",
     author="ThefCraft",
     author_email="sisodiyalaksh@gmail.com",
     url="https://github.com/thefcraft/cached_requests",
