@@ -1,9 +1,13 @@
 from setuptools import setup, find_packages
-with open('readme.md', 'r') as f:
-    long_description = f.read()
+try:
+    with open('readme.md', 'r') as f:
+        long_description = f.read()
+except FileNotFoundError as e:
+    long_description = "cached_requests is a simple and effective caching layer for Python requests."
+    
 setup(
     name="cached_requests",
-    version="0.1.4",
+    version="0.1.5",
     author="ThefCraft",
     author_email="sisodiyalaksh@gmail.com",
     url="https://github.com/thefcraft/cached_requests",
