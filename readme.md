@@ -1,9 +1,9 @@
-# CacheRequests
+# cached_requests
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/thefcraft/CacheRequests)
-[![PyPI version](https://badge.fury.io/py/PersistentRequests.svg)](https://badge.fury.io/py/PersistentRequests)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/thefcraft/cached_requests)
+[![PyPI version](https://badge.fury.io/py/cached_requests.svg)](https://badge.fury.io/py/cached_requests)
 
-CacheRequests is a Python library that provides a simple and effective caching layer for your web requests. It's built on top of the popular `requests` library and is designed to be a drop-in replacement for `requests.Session`.
+cached_requests is a Python library that provides a simple and effective caching layer for your web requests. It's built on top of the popular `requests` library and is designed to be a drop-in replacement for `requests.Session`.
 
 ## Features
 
@@ -17,19 +17,19 @@ CacheRequests is a Python library that provides a simple and effective caching l
 Install CacheFlow using pip:
 
 ```bash
-pip install PersistentRequests
+pip install cached_requests
 ```
 
 ## Quick Start
 
-Here's a simple example of how to use CacheRequests:
+Here's a simple example of how to use cached_requests:
 
 ```python
-from CacheRequests import CacheSession
+from cached_requests import CacheSession
 from datetime import timedelta
 
 # Create a new session with a cache directory
-requests = CacheSession(cache_dir='.cache', refresh_after=timedelta(hours=1)) # or use `from CacheRequests import requests`
+requests = CacheSession(cache_dir='.cache', refresh_after=timedelta(hours=1)) # or use `from cached_requests import requests`
 
 # Make a request
 response = requests.get('https://api.github.com')
@@ -44,7 +44,7 @@ print(response.json())
 
 ### Configuration
 
-You can configure the behavior of CacheRequests by passing arguments to the `CacheSession` constructor:
+You can configure the behavior of cached_requests by passing arguments to the `CacheSession` constructor:
 
 *   `cache_dir`: The directory where cached responses will be stored.
 *   `force_refresh`: If `True`, the cache will be ignored and all requests will be made to the network.
@@ -70,7 +70,7 @@ CacheFlow provides multiple ways to manage your cache.
 You can delete cache entries based on a URL pattern:
 
 ```python
-from CacheRequests import delete_cache_by_function
+from cached_requests import delete_cache_by_function
 def should_delete(url: str):
     return 'github.com' in url
 
@@ -81,7 +81,7 @@ delete_cache_by_function(requests, should_delete)
 You can delete cache entries that are older than a specified timedelta:
 
 ```python
-from CacheRequests import delete_cache_by_expiration
+from cached_requests import delete_cache_by_expiration
 from datetime import timedelta
 # Delete all cache entries older than 7 days
 delete_cache_by_expiration(requests, timedelta(days=7))
@@ -94,4 +94,4 @@ Contributions are welcome! If you have a feature request, bug report, or pull re
 
 ## License
 
-CacheRequests is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+cached_requests is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.

@@ -1,2 +1,2 @@
-include CacheRequests/*.pyi
-include CacheRequests/py.typed
+include cached_requests/*.pyi
+include cached_requests/py.typed

@@ -1,4 +1,4 @@
-name: Upload Python Package PersistentRequests
+name: Upload Python Package cached_requests
 
 on:
   workflow_dispatch:

@@ -22,8 +22,8 @@ from requests.sessions import (
 )
 _JSON: TypeAlias = Any  # any object that can be serialized to JSON
 
-class _Null: ...
-_DEFAULT = _Null()
+class _Default: ...
+_DEFAULT = _Default()
 
 
 class CacheSession(Session):
@@ -201,12 +201,12 @@ class CacheSession(Session):
     
     @contextmanager
     def configure(self, 
-        cache_dir: Path | str | None | _Null = _DEFAULT,
-        force_refresh: bool | _Null = _DEFAULT,
-        refresh_after: timedelta | None | _Null = _DEFAULT,
-        refresh_on_error: bool | _Null = _DEFAULT,
-        dump_to_cache: bool | _Null = _DEFAULT,
-        overwrite_allow_redirects: bool | None | _Null = _DEFAULT,
+        cache_dir: Path | str | None | _Default = _DEFAULT,
+        force_refresh: bool | _Default = _DEFAULT,
+        refresh_after: timedelta | None | _Default = _DEFAULT,
+        refresh_on_error: bool | _Default = _DEFAULT,
+        dump_to_cache: bool | _Default = _DEFAULT,
+        overwrite_allow_redirects: bool | None | _Default = _DEFAULT,
     ): ...
     
     def request(

@@ -10,8 +10,8 @@ from .urlmap import UrlMap
 from .utils import uuid
 from .path import Path
 
-class _Null: ...
-_DEFAULT = _Null()
+class _Default: ...
+_DEFAULT = _Default()
 
 class CacheSession(Session):
     def __init__(self, 
@@ -86,12 +86,12 @@ class CacheSession(Session):
     
     @contextmanager
     def configure(self, 
-        cache_dir: Path | str | None | _Null = _DEFAULT,
-        force_refresh: bool | _Null = _DEFAULT,
-        refresh_after: timedelta | None | _Null = _DEFAULT,
-        refresh_on_error: bool | _Null = _DEFAULT,
-        dump_to_cache: bool | _Null = _DEFAULT,
-        overwrite_allow_redirects: bool | None | _Null = _DEFAULT,
+        cache_dir: Path | str | None | _Default = _DEFAULT,
+        force_refresh: bool | _Default = _DEFAULT,
+        refresh_after: timedelta | None | _Default = _DEFAULT,
+        refresh_on_error: bool | _Default = _DEFAULT,
+        dump_to_cache: bool | _Default = _DEFAULT,
+        overwrite_allow_redirects: bool | None | _Default = _DEFAULT,
     ):
         prev_cache_dir = self.__cache_dir
         prev_force_refresh = self.__force_refresh
@@ -100,12 +100,12 @@ class CacheSession(Session):
         prev_dump_to_cache = self.__dump_to_cache
         prev_overwrite_allow_redirects = self.__overwrite_allow_redirects
         try:
-            if not isinstance(cache_dir, _Null): self.__cache_dir = Path(cache_dir).ensure_exists() if cache_dir is not None else None
-            if not isinstance(force_refresh, _Null): self.__force_refresh = force_refresh
-            if not isinstance(refresh_after, _Null): self.__refresh_after = refresh_after
-            if not isinstance(refresh_on_error, _Null): self.__refresh_on_error = refresh_on_error
-            if not isinstance(dump_to_cache, _Null): self.__dump_to_cache = dump_to_cache
-            if not isinstance(overwrite_allow_redirects, _Null): self.__overwrite_allow_redirects = overwrite_allow_redirects
+            if not isinstance(cache_dir, _Default): self.__cache_dir = Path(cache_dir).ensure_exists() if cache_dir is not None else None
+            if not isinstance(force_refresh, _Default): self.__force_refresh = force_refresh
+            if not isinstance(refresh_after, _Default): self.__refresh_after = refresh_after
+            if not isinstance(refresh_on_error, _Default): self.__refresh_on_error = refresh_on_error
+            if not isinstance(dump_to_cache, _Default): self.__dump_to_cache = dump_to_cache
+            if not isinstance(overwrite_allow_redirects, _Default): self.__overwrite_allow_redirects = overwrite_allow_redirects
             yield self
         finally:
             self.__cache_dir = prev_cache_dir

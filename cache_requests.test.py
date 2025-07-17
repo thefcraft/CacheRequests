@@ -1,10 +1,10 @@
-from CacheRequests import Path, requests, delete_cache_by_expiration, delete_cache_by_function
-from CacheRequests.session import CacheSession
+from cached_requests import Path, requests, delete_cache_by_expiration, delete_cache_by_function
+from cached_requests.session import CacheSession
 from datetime import timedelta, datetime, timezone
 # from email.utils import parsedate_to_datetime
 
-# from CacheRequests import CacheSession
-# from CacheRequests.cloudscraper import CloudScraper as CacheSession
+# from cached_requests import CacheSession
+# from cached_requests.cloudscraper import CloudScraper as CacheSession
 # response = CacheSession(
 #     cache_dir=(Path.from_basedir(__file__) @ '.temp').ensure_exists(),
 #     overwrite_allow_redirects=None
